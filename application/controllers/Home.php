@@ -7,7 +7,7 @@ class Home extends CI_Controller
     {
         parent::__construct();
         {
-            $this->load->model("Home_model", 'homemodel');
+            $this->load->model("Home_model");
         }
     }
 
@@ -16,7 +16,7 @@ class Home extends CI_Controller
 		$this->load->view('Home/homepage');
 	}
     
-    public function addMessage() 
+    public function addmsg() 
     {
          $data = [
             'name' => $this->input->post('name'),
@@ -24,7 +24,7 @@ class Home extends CI_Controller
             'email' => $this->input->post('email'),
             'message' => $this->input->post('message'),
         ];
-        $this->homemodel->insert($data);
+        $this->Home_model->insert($data);
         redirect('Home');
     }
 }
